@@ -4,17 +4,6 @@ body {
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color:#87CEFA;
     background-image:linear-gradient(top, #F0FFFF 0%, #87CEFA 51%);
-    background-image:-webkit-linear-gradient(top, #F0FFFF 0%, #87CEFA 51%);
-    background-image:-ms-linear-gradient(top, #F0FFFF 0%, #87CEFA 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #F0FFFF),
-        color-stop(0.51, #87CEFA)
-    );
-    background-attachment:fixed;
-    height:100%;
     margin:0px;
     padding:0px;
     width:100%;
@@ -23,24 +12,23 @@ body {
 h1 { 
     color: white; 
     font-family: 'Open Sans Condensed', sans-serif; 
-    font-size: 80px; 
+    font-size: 50px; 
     font-weight: 700; 
     line-height: 64px; 
     margin: 0 0 0; 
-    padding: 20px 30px; 
     text-align: center; 
     text-transform: uppercase; }
 
 /* Portrait layout (default) */
 .app {
     background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
+    position:absolute;            /* position in the center of the screen */
+    left:33%;
+    top:20%;
     height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
+    width:400px;                   /* text area width */
     text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    padding:10px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
     margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
                                    /* offset horizontal: half of text area width */
 }
