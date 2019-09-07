@@ -4,5 +4,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "displayName": "Happy Place"
+    "displayName": "Happy Place",
+    "dependencies": {
+        "firebase-tools": "^7.3.1"
+    }
 }
