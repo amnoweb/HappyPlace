@@ -47,13 +47,14 @@ input:hover,
 }
 
 /* style the submit button */
-input[type=submit] {
+input[type=submit], #register {
   background-color: #4CAF50;
   color: white;
   cursor: pointer;
+  text-align: center;
 }
 
-input[type=submit]:hover {
+input[type=submit]:hover, #register:hover {
   background-color: #45a049;
 }
 
@@ -143,7 +144,6 @@ body {
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
     width:100%;
 }
 
@@ -242,7 +242,6 @@ body {
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
     width:100%;
 }
 
