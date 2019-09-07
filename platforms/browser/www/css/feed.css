@@ -47,6 +47,10 @@ h1 {
     border-width: thick;
 }
 
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
 /* Portrait layout (default) */
 .header {
     position: relative top;            /* position in the center of the screen */
@@ -140,6 +144,7 @@ h1 {
     padding-bottom: 20px;
     padding-top: 20px;
     margin: auto;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 /*

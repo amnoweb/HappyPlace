@@ -7,5 +7,10 @@
     "displayName": "Happy Place",
     "dependencies": {
         "firebase-tools": "^7.3.1"
+    },
+    "cordova": {
+        "plugins": {
+            "phonegap-plugin-barcodescanner": {}
+        }
     }
 }

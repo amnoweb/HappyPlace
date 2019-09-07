@@ -1,136 +1,23 @@
-<!DOCTYPE html>
-
 <html>
-
-	<head>
-		<meta charset="utf-8" />
-		<meta name="format-detection" content="telephone=no" />
-		<meta name="msapplication-tap-highlight" content="no" />
-		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-		<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
-        
-        <style>
-            #page{
-                display: none;
-            }
-            #loading{
-                display: block;
-            }        
-        </style>
-		<!-- Good default declaration:
-		* gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-		* https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-		* Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-			* Enable inline JS: add 'unsafe-inline' to default-src
-			* Enable eval(): add 'unsafe-eval' to default-src
-		* Create your own at http://cspisawesome.com
-		-->
-		<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-        
-        <link href='https://fonts.googleapis.com/css?family=Kalam' rel='stylesheet'>
-        <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
-        <link rel="stylesheet" type="text/css" href="css/splash.css" /> 
-		<link rel="stylesheet" type="text/css" href="css/index.css" />
-        
-        <script>
-            function myFunction()
-            {
-                document.getElementById("page").style.display = "block";
-                document.getElementById("loading").style.display="none"
-            }
-        </script>
-		<title>Login or Register</title>
-	</head>
-
-	<body onload="myFunction()">
-        <div id="page">
-		<script>
-		  window.fbAsyncInit = function() {
-			FB.init({
-			  appId            : 375739516661421,
-			  autoLogAppEvents : true,
-			  xfbml            : true,
-			  version          : 'v4.0'
-			});
-			function loginFB(){
-				FB.login(function(response) {
-					if (response.authResponse) {
-					 console.log('Welcome!  Fetching your information.... ');
-					 FB.api('/me', function(response) {
-					   console.log('Good to see you, ' + response.name + '.');
-					 });
-					} else {
-					 console.log('User cancelled login or did not fully authorize.');
-					}
-				});
-			}
-		  };
-		</script>
-		<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
-		<div id="fb-root"></div>
-		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0&appId=375739516661421&autoLogAppEvents=1"></script>
-		<div class="container">
-			<form action="feed.html">
-				<div class="row">
-				  <h2 style="text-align:center">Login</h2>
-
-				<div class="col">
-				<a href="#" class="fb btn">
-				  <i class="fa fa-fb fa-fw"></i> Login with Facebook
-				</a>
-				<a href="#" class="twitter btn">
-				  <i class="fa fa-twitter fa-fw"></i> Login with Twitter
-				</a>
-				<a href="#" class="google btn"><i class="fa fa-google fa-fw">
-				  </i> Login with Google+
-				</a>
-				</div>
-
-				<div class="col">
-					<input type="text" name="username" placeholder="Username" required>
-					<input type="password" name="password" placeholder="Password" required>
-					<input type="submit" value="Login">
-					
-					<a href="register.html" id = "register" class="btn">Register</a>
-				</div>
-				
-				</div>
-			</form>
-		</div>
-
-		<!-- The core Firebase JS SDK is always required and must be listed first -->
-		<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
-
-		<!-- TODO: Add SDKs for Firebase products that you want to use
-		 https://firebase.google.com/docs/web/setup#config-web-app -->
-
-		<script>
-			// Your web app's Firebase configuration
-			var firebaseConfig = {
-				apiKey: "AIzaSyCoCRem69mMfZOGKpmOudeyzg5Dp5C57ds",
-				authDomain: "happy-place-pennapps.firebaseapp.com",
-				databaseURL: "https://happy-place-pennapps.firebaseio.com",
-				projectId: "happy-place-pennapps",
-				storageBucket: "happy-place-pennapps.appspot.com",
-				messagingSenderId: "31629146541",
-				appId: "1:31629146541:web:8e537e429d081705c60924"
-			};
-		</script>
-        </div>
-        <div id= "loading">
-            <div class ="welcome">
-                <h2>Good vibes only</h2>
-            </div>
-            <div class = "screen">
-                <img src="img/logo.png" class = "sun">
-            </div>
-            <div class = "happyplace">
-                <h1>Happy Place</h1>
-            </div>
-        </div>
-	</body>
-
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Kalam' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="css/main.css" /> 
+</head>
+<body onclick='window.location.href="signin.html"'>
+    <div class="container" href="signin.html">
+    <div class ="welcome">
+        <h2>Good vibes only</h2>
+     </div>
+    <div class = "screen">
+        <img src="img/logo.png" class = "sun">
+    </div>
+    <div class = "happyplace">
+        <h1>Happy Place</h1>
+    </div>
+        <div class="blink"><span>
+            <h4>(Press anywhere to continue)</h4>
+            </span></div>
+    </div>
+</body>
 </html>
-
