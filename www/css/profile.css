@@ -79,26 +79,58 @@ h1 {
 }
 
 .profilepic {
-    float: left;
     height: 150px;
     width: 150px;
-    margin-left: 40px;
     margin-top: 0px;
-    vertical-align: middle;
     border-radius: 50%;
 }
 
 .qr {
-    float: right;
     height: 150px;
     width: 150px;
-    margin-right: 40px;
     margin-top: 0px;
+}
+
+.column{
+    float: left;
+    width: 33.33%;
+}
+
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column2a{
+    float: left;
+    width: 50%;
+    text-align: right;
+    margin-left: -35px;
+    padding-right: 10px;
+    
+}
+
+.column2b{
+    float:left;
+    width: 50%;
+    text-align: left;
+
+}
+
+.row2:after{
+    content:"";
+    display: table;
+    clear: both;
 }
 
 h2 {
     color: #e4e4e7;
     padding-top: 30px;
+}
+
+h3 {
+    color: white;
 }
 
 .yourinfo {
@@ -107,19 +139,11 @@ h2 {
     margin-bottom: 60px;
 }
 
-.score{
-    background: white;
-    height: 150px;
-}
-
-.scorecontent{
-    text-align: center;
-    float: center;
-}
 
 .sun {
     height: 100px;
     width: 100px;
+    margin-top: -22px;
     
 }
 
