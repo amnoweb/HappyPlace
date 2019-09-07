@@ -16,10 +16,34 @@
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
-    <link rel="stylesheet" type="text/css" href="css/homepage.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+	<script>
+		function hasGetUserMedia() {
+			return !!(navigator.mediaDevices &&
+			navigator.mediaDevices.getUserMedia);
+		}
+
+		if (hasGetUserMedia()) {
+		// Good to go!
+		} else {
+		alert('getUserMedia() is not supported by your browser');
+		}
+	</script>
+	<video autoplay></video>
+	<script>
+		const constraints = {
+		  video: true
+		};
+
+		const video = document.querySelector('video');
+
+		navigator.mediaDevices.getUserMedia(constraints).
+		  then((stream) => {video.srcObject = stream});
+	</script>
+	
     <title>QR Scan</title>
 </head>
     
-
-    
+<body>
+</body>
 </html>

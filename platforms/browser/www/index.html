@@ -10,6 +10,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
 		<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+        
+        <style>
+            #page{
+                display: none;
+            }
+            #loading{
+                display: block;
+            }        
+        </style>
 		<!-- Good default declaration:
 		* gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
 		* https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
@@ -19,12 +28,24 @@
 		* Create your own at http://cspisawesome.com
 		-->
 		<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-
+        
+        <link href='https://fonts.googleapis.com/css?family=Kalam' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="css/splash.css" /> 
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
+        
+        <script>
+            function myFunction()
+            {
+                document.getElementById("page").style.display = "block";
+                document.getElementById("loading").style.display="none"
+            }
+        </script>
 		<title>Login or Register</title>
 	</head>
 
-	<body>
+	<body onload="myFunction()">
+        <div id="page">
 		<script>
 		  window.fbAsyncInit = function() {
 			FB.init({
@@ -97,6 +118,18 @@
 				appId: "1:31629146541:web:8e537e429d081705c60924"
 			};
 		</script>
+        </div>
+        <div id= "loading">
+            <div class ="welcome">
+                <h2>Good vibes only</h2>
+            </div>
+            <div class = "screen">
+                <img src="img/logo.png" class = "sun">
+            </div>
+            <div class = "happyplace">
+                <h1>Happy Place</h1>
+            </div>
+        </div>
 	</body>
 
 </html>
