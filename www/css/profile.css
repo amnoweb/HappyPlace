@@ -22,14 +22,24 @@ h1 {
 .Top {
     color: lightcoral; 
     font-family: 'Libre Baskerville', serif; 
-    font-size: 20px; 
+    font-size: 30px; 
     font-weight: 550; 
-    line-height: 25px; 
+    line-height: 30px; 
     margin: 0 0 0; 
     text-align: center; 
     text-decoration: none;
 }
 
+.header {
+    position: relative top;            /* position in the center of the screen */
+    background-color: #F0F8FF;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: auto;
+    height:30px;                   /* text area height */
+    width:auto;                   /* text area width */
+    text-align:center;
+}
 .nav {
     background: lightcoral;
     text-decoration: none;
@@ -45,18 +55,6 @@ h1 {
     border-style: solid;
     border-color: #f0f8ff;
     border-width: thick;
-}
-
-/* Portrait layout (default) */
-.header {
-    position: relative top;            /* position in the center of the screen */
-    background-color: #F0F8FF;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin: auto;
-    height:25px;                   /* text area height */
-    width:auto;                   /* text area width */
-    text-align:center;
 }
 
 .container {
@@ -88,6 +86,14 @@ h1 {
     margin-top: 0px;
     vertical-align: middle;
     border-radius: 50%;
+}
+
+.qr {
+    float: right;
+    height: 150px;
+    width: 150px;
+    margin-right: 40px;
+    margin-top: 0px;
 }
 
 h2 {
