@@ -65,6 +65,7 @@ h1 {
     margin: auto;
     padding: auto;
     overflow: scroll;
+    height: 420px;
 }
 
 .post {
