@@ -3,6 +3,9 @@ body {
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color:#87CEFA;
+    
+    /*FIGURE OUT WHY GRADIENT ISN'T WORKING */
+    
     background-image:linear-gradient(top, #F0FFFF 0%, #87CEFA 51%);
     margin:0px;
     padding:0px;
@@ -12,7 +15,7 @@ body {
 h1 { 
     color: white; 
     font-family: 'Open Sans Condensed', sans-serif; 
-    font-size: 50px; 
+    font-size: 40px; 
     font-weight: 700; 
     line-height: 64px; 
     margin: 0 0 0; 
@@ -21,12 +24,14 @@ h1 {
 
 /* Portrait layout (default) */
 .app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
     position:absolute;            /* position in the center of the screen */
-    left:33%;
+    
+    /* FIGURE OUT HOW TO ALIGN THIS ON THE MOBILE APP*/
+    
+    left:43%;
     top:20%;
     height:50px;                   /* text area height */
-    width:400px;                   /* text area width */
+    width:300px;                   /* text area width */
     text-align:center;
     padding:10px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
     margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */

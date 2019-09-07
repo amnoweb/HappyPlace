@@ -19,15 +19,40 @@
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
-    <link rel="stylesheet" type="text/css" href="css/homepage.css" />
-    <title>Happy Place Homepage</title>
+    <link rel="stylesheet" type="text/css" href="css/feed.css" />
+    <title>Happy Place Feed</title>
 </head>
 
 <body>
-    <div class="app">
-        <h1>Happy Place</h1>
+    <div class="header">
+        <h3>Happy Place</h3>
+    </div>
+    <div class="container">
+        <h1>Feed</h1>
+        <img src="../img/rays.png" alt="rays of sun" class="rays">
     </div>
     
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCoCRem69mMfZOGKpmOudeyzg5Dp5C57ds",
+    authDomain: "happy-place-pennapps.firebaseapp.com",
+    databaseURL: "https://happy-place-pennapps.firebaseio.com",
+    projectId: "happy-place-pennapps",
+    storageBucket: "happy-place-pennapps.appspot.com",
+    messagingSenderId: "31629146541",
+    appId: "1:31629146541:web:8e537e429d081705c60924"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
 </body>
 
 
