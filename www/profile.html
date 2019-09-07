@@ -23,6 +23,42 @@
 	</head>
 
 	<body>
+		<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
+		<script async defer  >
+		  // Your web app's Firebase configuration
+		  var firebaseConfig = {
+			apiKey: "AIzaSyAaxutQrCMkYk5YkJcIu7NGvAdQid6RDcM",
+			authDomain: "happyplace-d452c.firebaseapp.com",
+			databaseURL: "https://happyplace-d452c.firebaseio.com",
+			projectId: "happyplace-d452c",
+			storageBucket: "",
+			messagingSenderId: "297057551997",
+			appId: "1:297057551997:web:e71ab01c6b1f325b8f1314"
+		  };
+		  // Initialize Firebase
+		  firebase.initializeApp(firebaseConfig);
+		  database = firebase.database();
+		  var username = "catw101"
+		  var ref = database.ref('UserData/'+username);
+		  ref.on('value',gotData);
+		  
+		  function gotData(data){
+			
+			var userdata = data.val();
+			var keys = Object.keys(userdata)
+			console.log(keys)
+			var Namevalue = userdata["name"];
+			var locationValue= userdata["location"];
+			var bioValue= userdata["bio"];
+			//console.log(locationValue);
+			
+			Name.innerText = Namevalue;
+			bio.innerText = bioValue;
+			location.innerText = locationValue;
+			
+		  }
+		</script>
         <div class="header">
             <a href = "feed.html" class="Top">Happy Place</a>
         </div>
@@ -30,9 +66,10 @@
             <h1>Profile</h1>
             <div class ="yourinfo">
                 <img src="img/avatar3.jpg" class="profilepic">
-                <h3>Your Name</h3>
-                <h3>Location</h3>
-                <h3>Bio</h3>
+                <h3 id = "Name"></h3>
+                <h3 id = "location"></h3>
+                <h3 id = "bio"></h3>
+				
             </div>
             <div class="score">
                 <h2> Your Score </h2>
