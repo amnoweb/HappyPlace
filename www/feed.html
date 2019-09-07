@@ -31,35 +31,79 @@
         <h1>Feed</h1>
         <!--<img src="img/rays.png" alt="rays of sun" class="rays"> -->
         <div class="post">
-            <img src="avatar.jpg" alt="avatar" class="avatar">
+            <img src="img/avatar1.jpg" alt="avatar" class="avatar">
             <p class="announcement"><a href="user1.html" class="user">Amanda</a> thanked <a href="user2.html" class="user">Catelen</a>!</p>
             <p class="time">6h ago</p>
             <p class="content">Thanks for doing a great job on the front end!</p>
-            <img src="img/logo.png" alt="sun" class="sun">
-            <img src="img/logo.png" alt="sun" class="sun">
-            <img src="img/logo.png" alt="sun" class="sun">
+            <div class = "rating">
+                <img src="img/logo.png" alt="sun" class="sun">
+                <img src="img/logo.png" alt="sun" class="sun">
+                <img src="img/logo.png" alt="sun" class="sun">
+            </div>
         </div>
         <div class="post">
-            <img src="avatar.jpg" alt="avatar" class="avatar">
+            <img src="img/avatar2.jpg" alt="avatar" class="avatar">
             <p class="announcement"><a href="user1" class="user">Amanda</a> thanked <a href="user3.html" class="user">Prashant</a>!</p>
             <p class="time">6h ago</p>
             <p class="content">Thanks for implementing a great back end!</p>
-            <img src="img/logo.png" alt="sun" class="sun">
-            <img src="img/logo.png" alt="sun" class="sun">
-            <img src="img/logo.png" alt="sun" class="sun">
+            <div class = "rating">
+                <img src="img/logo.png" alt="sun" class="sun">
+                <img src="img/logo.png" alt="sun" class="sun">
+                <img src="img/logo.png" alt="sun" class="sun">
+            </div>
         </div>
         <div class="post">
-            <img src="avatar.jpg" alt="avatar" class="avatar">
+            <img src="img/avatar3.jpg" alt="avatar" class="avatar">
             <p class="announcement"><a href="user1.html" class="user">Amanda</a> thanked <a href="user4.html" class="user">Puppy</a>!</p>
             <p class="time">6h ago</p>
             <p class="content">Thanks for being a good boy!</p>
-            <img src="img/logo.png" alt="sun" class="sun">
-            <img src="img/logo.png" alt="sun" class="sun">
-            <img src="img/logo.png" alt="sun" class="sun">
-            <img src="img/logo.png" alt="sun" class="sun">
-            <img src="img/logo.png" alt="sun" class="sun">
+            <div class = "rating">
+                <img src="img/logo.png" alt="sun" class="sun">
+                <img src="img/logo.png" alt="sun" class="sun">
+                <img src="img/logo.png" alt="sun"   class="sun">
+                <img src="img/logo.png" alt="sun" class="sun">
+                <img src="img/logo.png" alt="sun" class="sun">
+            </div>
         </div>
     </div>
+    <!--
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
+	<script async defer class="marquee">
+	  // Your web app's Firebase configuration
+	  var firebaseConfig = {
+		apiKey: "AIzaSyAaxutQrCMkYk5YkJcIu7NGvAdQid6RDcM",
+		authDomain: "happyplace-d452c.firebaseapp.com",
+		databaseURL: "https://happyplace-d452c.firebaseio.com",
+		projectId: "happyplace-d452c",
+		storageBucket: "",
+		messagingSenderId: "297057551997",
+		appId: "1:297057551997:web:e71ab01c6b1f325b8f1314"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  database = firebase.database();
+	  var ref = database.ref('Comments');
+	  ref.on('value',gotData);
+	  
+	  function gotData(data){
+		//console.log(data.val());
+		var commentData = data.val();
+		var keys = Object.keys(commentData);
+		console.log(keys);
+		var comments = []
+		for (var i = 0; i < keys.length; i++){
+			var k = keys[i];
+			comments[i] =commentData[k].Comment;
+			//li.parent('commentMarque')
+		}
+		console.log(comments[1]);
+		var li = document.createElement('marquee', comments +"   #   " );
+		li.innerHTML = comments ;                
+		document.getElementById("commentMarque").appendChild(li);
+	  }
+	</script>
+    -->
 
     <div class="navbar">
         <a href="googleMaps.html" class="nav">Map</a>
