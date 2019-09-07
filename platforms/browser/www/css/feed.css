@@ -2,11 +2,7 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#87CEFA;
-    
-    /*FIGURE OUT WHY GRADIENT ISN'T WORKING */
-    
-    background-image:linear-gradient(top, #F0FFFF 0%, #87CEFA 51%);
+    background-color: #87CEFA;
     margin:0px;
     padding:0px;
     width:100%;
@@ -20,23 +16,44 @@ h1 {
     line-height: 64px; 
     margin: 0 0 0; 
     text-align: center; 
-    text-transform: uppercase; }
+    text-transform: uppercase; 
+}
+
+h3 {
+    color: lightcoral; 
+    font-family: 'Libre Baskerville', serif; 
+    font-size: 20px; 
+    font-weight: 600; 
+    line-height: 30px; 
+    margin: 0 0 0; 
+    text-align: center; 
+}
 
 /* Portrait layout (default) */
-.app {
-    position:absolute;            /* position in the center of the screen */
+.header {
+    position: relative top;            /* position in the center of the screen */
     
     /* FIGURE OUT HOW TO ALIGN THIS ON THE MOBILE APP*/
-    
-    left:43%;
-    top:20%;
-    height:50px;                   /* text area height */
-    width:300px;                   /* text area width */
+    background-color: #F0F8FF;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: auto;
+    height:30px;                   /* text area height */
+    width:auto;                   /* text area width */
     text-align:center;
-    padding:10px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
 }
+
+.container {
+    position: sticky;
+    text-align: center;
+    margin: auto;
+    padding: auto;
+}
+
+.rays {
+    margin-top: -128px;
+}
+
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {

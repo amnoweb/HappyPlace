@@ -26,7 +26,7 @@
 
 	<body>
 		<div class="container">
-			<form action="homepage.html">
+			<form action="feed.html">
 				<div class="row">
 				  <h2 style="text-align:center">Login Page</h2>
 				  <div class="vl">
@@ -49,42 +49,14 @@
 					<input type="text" name="username" placeholder="Username" required>
 					<input type="password" name="password" placeholder="Password" required>
 					<input type="submit" value="Login">
+					
+					<a href="register.html" id = "register" class="btn">Register</a>
 				</div>
-				  
+				
 				</div>
 			</form>
 		</div>
 
-		<div class="bottom-container">
-			  <div class="row">
-				<div class="col">
-				  <a href="register.html" style="color:white" class="btn">Sign up</a>
-				</div>
-				<div class="col">
-				  <a href="#" style="color:white" class="btn">Forgot password?</a>
-				</div>
-			  </div>
-		</div>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#config-web-app -->
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyCoCRem69mMfZOGKpmOudeyzg5Dp5C57ds",
-    authDomain: "happy-place-pennapps.firebaseapp.com",
-    databaseURL: "https://happy-place-pennapps.firebaseio.com",
-    projectId: "happy-place-pennapps",
-    storageBucket: "happy-place-pennapps.appspot.com",
-    messagingSenderId: "31629146541",
-    appId: "1:31629146541:web:8e537e429d081705c60924"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
 	</body>
 
 </html>
