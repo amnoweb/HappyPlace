@@ -21,8 +21,8 @@ h2 {
 }
 
 .sun {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     animation-name: spin;
     animation-duration: 4s;
     animation-iteration-count: infinite;
@@ -32,7 +32,7 @@ h2 {
 h1 {
     color: lightcoral;
     text-align: center;
-    font-size: 60px;
+    font-size: 40px;
     text-transform: uppercase;
     font-family: 'Didact Gothic'
 }
