@@ -8,7 +8,7 @@ body {
     width:100%;
 }
 
-h1 { 
+h3 { 
     color: white; 
     font-family: 'Open Sans Condensed', sans-serif; 
     font-size: 40px; 
@@ -22,12 +22,34 @@ h1 {
 .Top {
     color: lightcoral; 
     font-family: 'Libre Baskerville', serif; 
-    font-size: 20px; 
+    font-size: 30px; 
     font-weight: 550; 
-    line-height: 25px; 
+    line-height: 30px; 
     margin: 0 0 0; 
     text-align: center; 
     text-decoration: none;
+}
+
+.header {
+    position: relative top;            /* position in the center of the screen */
+    background-color: #F0F8FF;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: auto;
+    height:30px;                   /* text area height */
+    width:auto;                   /* text area width */
+    text-align:center;
+}
+
+.navbar {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f0f8ff;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: auto;
 }
 
 .nav {
@@ -45,50 +67,4 @@ h1 {
     border-style: solid;
     border-color: #f0f8ff;
     border-width: thick;
-}
-
-/* Portrait layout (default) */
-.header {
-    position: relative top;            /* position in the center of the screen */
-    background-color: #F0F8FF;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin: auto;
-    height:25px;                   /* text area height */
-    width:auto;                   /* text area width */
-    text-align:center;
-}
-
-.container {
-    position: sticky;
-    text-align: center;
-    margin: auto;
-    padding: auto;
-}
-
-/*.rays {
-    margin-top: -128px;
-}
-*/
-
-.navbar {
-    overflow: hidden;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #f0f8ff;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    margin: auto;
-}
-
-
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
-    }
 }
