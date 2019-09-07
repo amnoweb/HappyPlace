@@ -60,10 +60,54 @@ h1 {
 }
 
 .container {
-    position: sticky;
+    position: relative;
     text-align: center;
     margin: auto;
     padding: auto;
+    overflow: scroll;
+}
+
+.post {
+    background: white;
+    width: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.announcement{
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 10px;
+    color: dimgrey;
+}
+.time{
+    text-align:right;
+    margin-top: -15px;
+    padding-right: 17px;
+    font-size: 13px;
+    color: darkgrey
+}
+
+.user {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: lightcoral;
+}
+
+.avatar {
+    float: left;
+}
+
+.content{
+    margin-top: -10px;
+    text-align: center;
+}
+
+.sun {
+    height: 40px;
+    width: 40px;
+    margin-top: -10px;
+    padding-bottom: 5px;
 }
 
 /*.rays {
