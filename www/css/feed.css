@@ -22,12 +22,23 @@ h1 {
 .Top {
     color: lightcoral; 
     font-family: 'Libre Baskerville', serif; 
-    font-size: 20px; 
+    font-size: 30px; 
     font-weight: 550; 
-    line-height: 25px; 
+    line-height: 30px; 
     margin: 0 0 0; 
     text-align: center; 
     text-decoration: none;
+}
+
+.header {
+    position: relative top;            /* position in the center of the screen */
+    background-color: #F0F8FF;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: auto;
+    height:30px;                   /* text area height */
+    width:auto;                   /* text area width */
+    text-align:center;
 }
 
 .nav {
@@ -47,21 +58,6 @@ h1 {
     border-width: thick;
 }
 
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
-}
-
-/* Portrait layout (default) */
-.header {
-    position: relative top;            /* position in the center of the screen */
-    background-color: #F0F8FF;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin: auto;
-    height:25px;                   /* text area height */
-    width:auto;                   /* text area width */
-    text-align:center;
-}
 
 .container {
     position: relative;
@@ -144,7 +140,6 @@ h1 {
     padding-bottom: 20px;
     padding-top: 20px;
     margin: auto;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 /*
