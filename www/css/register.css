@@ -29,6 +29,7 @@ h1 {
 
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
 /* Add padding to containers */
@@ -51,18 +52,11 @@ input[type=text]:focus, input[type=password]:focus {
   outline: none;
 }
 
-/* Overwrite default styles of hr */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
 /* Set a style for the submit button */
 .registerbtn {
-  background-color: #4CAF50;
+  background-color: lightcoral;
   color: white;
   padding: 16px 20px;
-  margin: 8px 0;
   border: none;
   cursor: pointer;
   width: 100%;
@@ -70,5 +64,5 @@ hr {
 }
 
 .registerbtn:hover {
-  opacity: 1;
+  background-color: #D47171;
 }
