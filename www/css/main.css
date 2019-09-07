@@ -1,0 +1,60 @@
+body {
+    background-color: #87CEFA;
+}
+
+
+.welcome{
+    margin-top:70px;
+}
+
+h2 {
+    text-align: center;
+    color: aliceblue;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-family: 'Kalam';
+}
+
+.screen {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.sun {
+    width: 300px;
+    height: 300px;
+    animation-name: spin;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+h1 {
+    color: lightcoral;
+    text-align: center;
+    font-size: 60px;
+    text-transform: uppercase;
+    font-family: 'Didact Gothic'
+}
+
+h4 {
+    font-family: 'Kalam';
+    color: aliceblue;
+    text-align: center;
+    font-weight: 100;
+    text-transform: lowercase;
+}
+
+.blink{
+    margin-top: -30px;
+}
+
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg); 
+    }
+    to { 
+        transform: rotate(360deg); 
+    }
+}
