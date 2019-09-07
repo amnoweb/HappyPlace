@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+  </head>
+  <body>
+  <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
+	<script async defer  >
+	  // Your web app's Firebase configuration
+	  var firebaseConfig = {
+		apiKey: "AIzaSyAaxutQrCMkYk5YkJcIu7NGvAdQid6RDcM",
+		authDomain: "happyplace-d452c.firebaseapp.com",
+		databaseURL: "https://happyplace-d452c.firebaseio.com",
+		projectId: "happyplace-d452c",
+		storageBucket: "",
+		messagingSenderId: "297057551997",
+		appId: "1:297057551997:web:e71ab01c6b1f325b8f1314"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  database = firebase.database();
+	  var ref = database.ref('Comments');
+	  ref.on('value',gotData);
+	  
+	  function gotData(data){
+		//console.log(data.val());
+		var commentData = data.val();
+		var keys = Object.keys(commentData);
+		console.log(keys);
+		var comments = []
+		for (var i = 0; i < keys.length; i++){
+			var k = keys[i];
+			comments[i] =commentData[k].Comment;
+			//li.parent('commentMarque')
+		}
+		console.log(comments[1]);
+		var li = document.createElement('marquee', comments +"   #   " );
+		li.innerHTML = comments ;                
+		document.getElementById("commentMarque").appendChild(li);
+	  }
+	</script>
+	
+    <style> 
+		.marquee {
+			width: 100%;
+			line-height: 40px;
+			background-color: Pink;
+		}
+		.marquee p {
+			//display: inline-block;
+			padding-left: 100%;
+			animation: marquee 2s linear infinite;
+		}
+		@keyframes marquee {
+			0%   { transform: translate(0, 0); }
+			100% { transform: translate(-100%, 0); }
+		}
+    </style>
+	 <div class="marquee" id="commentMarque">
+	<p><b></b></p>
+  </body>
+</html>
