@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
+  </head>
+  <body>
+    <h3>Happy Place</h3>
+    
+	
+	<!--The div element for the map -->
+    <div id="map"></div>
+    <script async defer >
+		var map;
+		// Initialize and add the map
+		function initMap() {
+        map = new google.maps.Map(
+            document.getElementById('map'),
+            {center: new google.maps.LatLng(39.9525625, -75.1895462), zoom: 12});
+
+        var iconBase =
+			"https://00e9e64baceba0549ba6dc418448774f8603576b098ad024bc-apidata.googleusercontent.com/download/storage/v1/b/qrcode_happyplace/o/3dedcd235214cdde6b4e171fdbf66c9d_heart_icon_by_vexels_0vg_icon.png?qk=AD5uMEuYmRyPd0PQ9tJFb6_CBv3gX5IVm0SSfcPIKzr7UcEOCPvftsvtenLeNqMKaHp3Z8b-p4dtG5UN9NKJyBeQ9vo3pxZN7zjwd-ZUU0MYisocSftbBrWJLHWmO9Qbn7v0IbbS2SEWdgFIdnmRpMqFgNTbxvWLfz9zIeVUntdFLfz94-UbA_81EbD9uwKIKKOAaUZVzzI50k5hje6DmA-5_hwcIcx6NvFZpn0oAabnzS4TbkaA8t07MuzlC79jYsJfoRu4Qoh8B9Is2_RmIPTq-9D72LLHbWmOPxS_b0qWaEu_afRn_8kdGkEP_PBY4ZVL3QevMcjL8bjAPznaTrTyE9y8jkIpJCdAOWVioGsAk6he2WHFSxvqI8O47x4p-VJkS5ySrnxMDFH0ui-Wct_LKU7Wq65ReXLjXrgCcgpid5-ZyDkTMHsrp1zXNiDebKAdYGKhVsTtP4llW6TeyY6fpEBPg6A_Ge4gvCCOYfBy0G8M8cD1dD6WK_PtRI3OhRlrr11_ZMpLPs75jdC4Tyx4C6Ko_y2oOMX5Vhn_Ue5tjILeWfEhRWC5q6wPQpd0Ny65TdYkqWUpCwZ1yfoaVhQUVbwDtRN2HV-RJJ0kPH-H3p8j2wbCXr0uvEVSm7BYdU3Kaq_5Glh9NbItAEV2yRzGYQYUsO3tu4oy90GtotDBDFGdzzNsjicLVQnqOJbt7DKDw2OgBJhUjhpEgirItvaq0owdvsyj723Qirem4UcahIwiIFiGQ3s54zd1tnSYwLKjnOKL4OzA0d9YyBg2hd7_HTEFd0iAif-an_yHx9U7WhJrwOARarP9VrCfkxuW84J9eIvULMWcm9awqEhk0OmciIZGZ2ICzTcLdBIJvlsFRUWB_dRGLfc"
+		
+		var icons = {
+          
+          info: {
+            icon: iconBase 
+          }
+        };
+
+        var features = [
+          {
+            position: new google.maps.LatLng(39.9545625, -75.1875462),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(39.9575625, -75.1835462),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(39.9535625, -75.1815462),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(39.9425625, -75.1455462),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(39.9825625, -75.1145462),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(39.9125625, -75.1985462),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(39.9500625, -75.1405462),
+            type: 'info'
+          }
+        ];
+
+        // Create markers.
+        for (var i = 0; i < features.length; i++) {
+          var marker = new google.maps.Marker({
+            position: features[i].position,
+			animation: google.maps.Animation.DROP,
+            icon: icons[features[i].type].icon,
+            map: map
+          });
+        };
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwRMNTncKoZZ8E02VRTxEeGt6kxqW-ghY&callback=initMap">
+    </script>
+  </body>
+</html>
