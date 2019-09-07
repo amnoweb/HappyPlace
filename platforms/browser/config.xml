@@ -2,10 +2,10 @@
 <widget id="com.phonegap.happyplace" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Happy Place</name>
     <description>
-        Push sample application that receives push notifications.
+        A happy app for helpful people.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="weberama@grinnell.edu" href="http://github.com/amnoweb/HappyPlace">
+        Amanda, Catelen, and Prashant
     </author>
     <content src="index.html" />
     <access origin="*" />
