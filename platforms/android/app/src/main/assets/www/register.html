@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+		<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+		<!-- Good default declaration:
+		* gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+		* https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+		* Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+			* Enable inline JS: add 'unsafe-inline' to default-src
+			* Enable eval(): add 'unsafe-eval' to default-src
+		* Create your own at http://cspisawesome.com
+		-->
+		<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+		<link rel="stylesheet" type="text/css" href="css/register.css" />
+		<title>Register</title>
+			<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
+			
+		<script>
+				function sendData() {
+					var nameValue= document.getElementById("name").value;
+					var passwordValue= document.getElementById("password").value;
+					var bioValue= document.getElementById("bio").value;
+					var usernameValue= document.getElementById("username").value;
+					var locationValue= document.getElementById("location").value;
+					
+					var firebaseConfig = {
+						apiKey: "AIzaSyAaxutQrCMkYk5YkJcIu7NGvAdQid6RDcM",
+						authDomain: "happyplace-d452c.firebaseapp.com",
+						databaseURL: "https://happyplace-d452c.firebaseio.com",
+						projectId: "happyplace-d452c",
+						storageBucket: "",
+						messagingSenderId: "297057551997",
+						appId: "1:297057551997:web:e71ab01c6b1f325b8f1314"
+					  };
+					  // Initialize Firebase
+					firebase.initializeApp(firebaseConfig);
+					database = firebase.database();
+					var ref = database.ref('UserData');
+					var data = {
+						name: nameValue,
+						username: usernameValue,
+						password: passwordValue,
+						bio: bioValue,
+						location: locationValue
+					}
+					ref.child(usernameValue).set(data);
+				}
+		</script>
+	</head>
+	
+	<body>
+		<form method = "get" action = "newfeed.html" onsubmit = "return false">
+		  <div class="container">
+			<h1>Register</h1>
+			
+			<label for="name"><b>Name</b></label>
+			<input type="text" id = "name" placeholder="Name" name="name" required>
+			
+			<label for="email"><b>Email</b></label>
+			<input type="text" id = "email" placeholder="Email" name="email" required>
+			
+			<label for="username"><b>Username</b></label>
+			<input type="text" id = "username" placeholder="Username" name="username" required>
+​
+			<label for="psw"><b>Password</b></label>
+			<input type="password" id = "password" placeholder="Password" name="password" required>
+			
+			<label for="bio"><b>Bio</b></label>
+			<input type="text" id = "bio" placeholder="Bio" name="bio" required>
+			
+			<label for="location"><b>Location</b></label>
+			<input type="text" id = "location" placeholder="Location" name="location" required>
+​
+			<button type="submit" class="registerbtn" onclick = "sendData()">Register</button>
+		  </div>
+		</form>
+		<div class = "container">
+			<button class = "registerbtn" onclick = "location.href = 'index.html'">Sign in</button
+		</div>
+	</body>
+</html>

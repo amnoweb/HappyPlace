@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
+    <link rel="stylesheet" type="text/css" href="css/googleMaps.css" />
+  </head>
+  <body>
+    <div class="header">
+        <a href = "feed.html" class="Top">Happy Place</a>
+    </div>
+    
+	
+	<!--The div element for the map -->
+    <div id="map"></div>
+    <script async defer >
+		var map;
+		// Initialize and add the map
+		function initMap() {
+        map = new google.maps.Map(
+            document.getElementById('map'),
+            {center: new google.maps.LatLng(39.9525625, -75.1895462), zoom: 12});
+
+        var iconBase =
+			"https://storage.googleapis.com/qrcode_happyplace/3dedcd235214cdde6b4e171fdbf66c9d_heart_icon_by_vexels_0vg_icon.png"
+		var icons = {
+          
+          info: {
+            icon: iconBase 
+          }
+        };
+
+        var features = [
+          {
+            position: new google.maps.LatLng(39.9545625, -75.1875462),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(39.9575625, -75.1835462),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(39.9535625, -75.1815462),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(39.9425625, -75.1455462),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(39.9825625, -75.1145462),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(39.9125625, -75.1985462),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(39.9500625, -75.1405462),
+            type: 'info'
+          }
+        ];
+
+        // Create markers.
+        for (var i = 0; i < features.length; i++) {
+          var marker = new google.maps.Marker({
+            position: features[i].position,
+			animation: google.maps.Animation.DROP,
+            icon: icons[features[i].type].icon,
+            map: map
+          });
+        };
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwRMNTncKoZZ8E02VRTxEeGt6kxqW-ghY&callback=initMap">
+    </script>
+      <div class="navbar">
+        <a href="googleMaps.html" class="nav">Map</a>
+        <a href="feed.html" class="nav">Feed</a>
+        <a href="profile.html" class="nav">Profile</a>
+        <a href="scan.html" class="nav">Scan</a>
+    </div>
+  </body>
+</html>
