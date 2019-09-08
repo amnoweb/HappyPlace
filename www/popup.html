@@ -1,0 +1,65 @@
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+		<link rel="stylesheet" type="text/css" href="css/popup.css" />
+		<title>Send Message</title>
+	</head>
+
+	<body>
+        <div class="header">
+            <a href = "feed.html" class="Top">Happy Place</a>
+        </div>
+		<h1>Message and Reward</h1>
+        <div class="container">
+            <form action="action_page.php">
+
+                <label for="toUser">To:</label>
+                <input type="text" id="toUser" value="username" required>
+
+                <label for="suns"># of Suns: </label>
+                <select id="suns" name="suns" required>
+                    <option value="" disabled selected>Select # 1-5</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <label for="message">Message: </label>
+                <textarea id="message" name="message" placeholder="Write something nice!" style="height:200px" required></textarea>
+
+                <input type="button" value="Submit" id = 'submit' onclick= sendfun()>
+                <input type="button" value="Cancel" id = 'submit' onclick= backfun()>
+            </form>
+        </div>
+    
+    <script>
+        function sendfun(){
+            var input = document.createElement('input');
+            
+            var send = document.getElementbyID('submit');
+            if(send){
+                send.onclick = function (){
+                    window.open("congrats.html", "_self");
+                }
+            }
+        }
+    
+        function backfun(){
+            window.open("feed.html", "_self");
+        }
+
+        
+        </script>
+    </body>
+
+</html>
+

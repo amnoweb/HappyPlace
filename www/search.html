@@ -73,6 +73,7 @@
                 if (searchKeyword == keys[i]){
                     if (ul.hasChildNodes()) {
                         ul.removeChild(ul.childNodes[0]);
+                        var myWindow = window.open("popup.html", "_self");
                     }
                     var listItem = document.createElement("li");
                     listItem.textContent = keys[i];
