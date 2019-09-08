@@ -1,0 +1,100 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color: #87CEFA;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+.Top {
+    color: lightcoral; 
+    font-family: 'Libre Baskerville', serif; 
+    font-size: 30px; 
+    font-weight: 550; 
+    line-height: 30px; 
+    margin: 0 0 0; 
+    text-align: center; 
+    text-decoration: none;
+}
+
+.header {
+    position: relative top;            /* position in the center of the screen */
+    background-color: #F0F8FF;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: auto;
+    height:30px;                   /* text area height */
+    width:auto;                   /* text area width */
+    text-align:center;
+}
+
+.container {
+    vertical-align: middle;
+}
+
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+
+form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196f3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.example button:hover {
+    background: #0b7dda;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.nav {
+    background: lightcoral;
+    text-decoration: none;
+    color: #f0f8ff;
+    font-size: 17px;
+    text-transform: uppercase;
+    float: left;
+    width: 24%;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    border-style: solid;
+    border-color: #f0f8ff;
+    border-width: thick;
+}
+
+
+.navbar {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+    background-color: #f0f8ff;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: auto;
+}
