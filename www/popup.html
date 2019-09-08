@@ -10,6 +10,34 @@
 
 		<link rel="stylesheet" type="text/css" href="css/popup.css" />
 		<title>Send Message</title>
+        <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
+			
+		<script>
+            var firebaseConfig = {
+                apiKey: "AIzaSyAaxutQrCMkYk5YkJcIu7NGvAdQid6RDcM",
+                authDomain: "happyplace-d452c.firebaseapp.com",
+                databaseURL: "https://happyplace-d452c.firebaseio.com",
+                projectId: "happyplace-d452c",
+                storageBucket: "",
+                messagingSenderId: "297057551997",
+                appId: "1:297057551997:web:e71ab01c6b1f325b8f1314"
+                };
+                // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            database = firebase.database();
+            var ref = database.ref('Comment');
+            var receiverData = database.ref('SearchRes');
+            receiverData.on('value', getRec);
+            var receiver;
+            function getRec(recName){
+                var temp = recName.val();
+                receiver = Object.values(temp);
+                console.log(receiver[0]);
+            }
+
+            
+		</script>
 	</head>
 
 	<body>
@@ -20,8 +48,8 @@
         <div class="container">
             <form action="action_page.php">
 
-                <label for="toUser">To:</label>
-                <input type="text" id="toUser" value="username" required>
+                <label for="toUser">From:</label>
+                <input type="text" id="toUser" placeholder="username" required>
 
                 <label for="suns"># of Suns: </label>
                 <select id="suns" name="suns" required>
@@ -37,15 +65,27 @@
                 <textarea id="message" name="message" placeholder="Write something nice!" style="height:200px" required></textarea>
 
                 <input type="button" value="Submit" id = 'submit' onclick= sendfun()>
-                <input type="button" value="Cancel" id = 'submit' onclick= backfun()>
+                <input type="button" value="Cancel" id = 'back' onclick= backfun()>
             </form>
         </div>
     
     <script>
         function sendfun(){
+            var sender= document.getElementById("toUser").value;
+            var sunsNum= document.getElementById("suns").value;
+            var ACcomment= document.getElementById("message").value;
+
+            var data = {
+                senderUser: sender,
+                receiverUser: receiver[0],
+                numofsun: sunsNum,
+                actualComment: ACcomment,
+            }
+
+            ref.push(data);
+
             var input = document.createElement('input');
-            
-            var send = document.getElementbyID('submit');
+            var send = document.getElementById('Submit');
             if(send){
                 send.onclick = function (){
                     window.open("congrats.html", "_self");
