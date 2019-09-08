@@ -45,21 +45,21 @@ form.example input[type=text] {
     margin-top: 120px;
 }
 
-form.example button {
+form.example input {
     float: left;
     width: 20%;
     margin-top: 120px;
     padding: 10px;
     background: #2196f3;
-    color: white;
+    color: black;
     font-size: 17px;
     border: 1px solid grey;
     border-left: none;
     cursor: pointer;
 }
 
-form.example button:hover {
-    background: #0b7dda;
+form.example input:hover {
+    background: white;
 }
 
 form.example::after {
@@ -97,3 +97,25 @@ form.example::after {
     padding-top: 20px;
     margin: auto;
 }
+
+#myUL {
+    /* Remove default list styling */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #myUL li {
+    border: 1px solid #ddd; /* Add a border to all links */
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #06bdf5; /* Grey background color */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove default text underline */
+    font-size: 18px; /* Increase the font-size */
+    color: black; /* Add a black text color */
+    display: block; /* Make it into a block element to fill the whole list */
+  }
+  
+  #myUL li :hover:not(.header) {
+    background-color: #eee; /* Add a hover effect to all links, except for headers */
+  }

@@ -19,6 +19,33 @@
     <link rel="stylesheet" type="text/css" href="css/search.css" />
 	
     <title>User Search</title>
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
+			
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAaxutQrCMkYk5YkJcIu7NGvAdQid6RDcM",
+            authDomain: "happyplace-d452c.firebaseapp.com",
+            databaseURL: "https://happyplace-d452c.firebaseio.com",
+            projectId: "happyplace-d452c",
+            storageBucket: "",
+            messagingSenderId: "297057551997",
+            appId: "1:297057551997:web:e71ab01c6b1f325b8f1314"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        database = firebase.database();
+        var ref = database.ref('UserList');
+        ref.on('value',gotData);
+        var keys;
+        function gotData(data){
+            var userdata = data.val();
+            keys = Object.keys(userdata);
+            console.log(keys);
+            
+        }
+    </script>
 </head>
     
 <body>
@@ -27,11 +54,35 @@
 	</div>
     <div class="container">
 	<form class="example" action="action_page.php">
-        <input type="text" placeholder="Search by username" name="search">
-        <button type="submit">Search!
-        </button>
+        <input type="text" id="searchbar"  placeholder="Search by username" name="search">
+        <input type="button" value="Search!" id = 'submit' onclick="searchfun()">
+
     </form>
+    <ul id="myUL">
+        
+    </ul>
+    
     </div>
+    <script>
+        function searchfun(){
+            var searchKeyword = document.getElementById("searchbar").value;
+            var ul = document.querySelector("ul");
+
+            console.log(searchKeyword);
+            for (var i=0; i<keys.length;i++){
+                if (searchKeyword == keys[i]){
+                    if (ul.hasChildNodes()) {
+                        ul.removeChild(ul.childNodes[0]);
+                    }
+                    var listItem = document.createElement("li");
+                    listItem.textContent = keys[i];
+                    ul.appendChild(listItem);
+                }
+            }
+        }
+
+        
+        </script>
     <div class="navbar">
 		<a href="googleMaps.html" class="nav">Map</a>
 		<a href="feed.html" class="nav">Feed</a>

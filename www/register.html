@@ -46,6 +46,7 @@
 					firebase.initializeApp(firebaseConfig);
 					database = firebase.database();
 					var ref = database.ref('UserData');
+					var userList = database.ref('UserList');
 					var data = {
 						name: nameValue,
 						username: usernameValue,
@@ -54,6 +55,7 @@
 						location: locationValue
 					}
 					ref.child(usernameValue).set(data);
+					userList.child(usernameValue).set(passwordValue);
 				}
 		</script>
 	</head>
@@ -85,7 +87,7 @@
 		  </div>
 		</form>
 		<div class = "container">
-			<button class = "registerbtn" onclick = "location.href = 'index.html'">Sign in</button
+			<button class = "registerbtn" onclick = "location.href = 'index.html'">Sign in</button>
 		</div>
 	</body>
 </html>

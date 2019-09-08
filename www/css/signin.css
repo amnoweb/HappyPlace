@@ -46,15 +46,15 @@ input:hover,
 }
 
 /* style the submit button */
-input[type=submit], #register {
+input[type=button], #register {
   background-color: lightcoral;
   color: white;
   cursor: pointer;
   text-align: center;
 }
 
-input[type=submit]:hover, #register:hover {
-  background-color: #D47171;
+input[type=button]:hover, #register:hover {
+  background-color: rgb(238, 6, 6);
 }
 
 /* Two-column layout */

@@ -25,7 +25,7 @@
 	<body>
 		<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
-		<script async defer  >
+		<script>
 		  // Your web app's Firebase configuration
 		  var firebaseConfig = {
 			apiKey: "AIzaSyAaxutQrCMkYk5YkJcIu7NGvAdQid6RDcM",
@@ -39,36 +39,52 @@
 		  // Initialize Firebase
 		  firebase.initializeApp(firebaseConfig);
 		  database = firebase.database();
-		  var username = "catw101"
-		  var ref = database.ref('UserData/'+username);
-		  ref.on('value',gotData);
-		  
-		  function gotData(data){
+		  var getLogin = database.ref('LogIN');
+		  getLogin.on('value',gotUser);
+		  var LoginUser;
+		  function gotUser(loginData){
+				var LoginUser = loginData.val();
+				console.log(LoginUser);
+				console.log("shit");
+				var ref = database.ref('UserData/'+LoginUser);
+				ref.on('value',gotData);
 			
-			var userdata = data.val();
-			var keys = Object.keys(userdata)
-			console.log(keys)
-			var Namevalue = userdata["name"];
-            var usernameValue = userdata["username"]
-			var locationValue= userdata["location"];
-			var bioValue= userdata["bio"];
-			//console.log(locationValue);
+				function gotData(data){
+					var userdata = data.val();
+					var keys = Object.keys(userdata)
+					console.log(keys)
+					var Namevalue = userdata["name"];
+					var usernameValue = userdata["username"]
+					var locationValue= userdata["location"];
+					var bioValue= userdata["bio"];
+					var imgurl = userdata["imgurl"];
+					//console.log(locationValue);
+					
+					Name.innerText = Namevalue;
+					Username.innerText = "@" + usernameValue;
+					bio.innerText = bioValue;
+					loc1.innerText = locationValue;
+					if (imgurl == "none"){
+						document.getElementById("ProfileDP").src = "https://storage.cloud.google.com/qrcode_happyplace/82455-200.png?authuser=3";
+					}
+					else{
+						document.getElementById("ProfileDP").src =imgurl;
+					}
+				}
+			}
+		</script>
+		<script>
 			
-			Name.innerText = Namevalue;
-            Username.innerText = "@" + usernameValue;
-			bio.innerText = bioValue;
-			loc1.innerText = locationValue;
-			
-		  }
 		</script>
         <div class="header">
             <a href = "feed.html" class="Top">Happy Place</a>
         </div>
+		
         <div class="container">
             <h1>Profile</h1>
             <div class ="row">
                 <div class="column">
-                    <img src="img/avatar1.jpg" class="profilepic">
+                    <img id="ProfileDP" src="https://storage.cloud.google.com/qrcode_happyplace/82455-200.png?authuser=3" class="profilepic">
                 </div>
                 <div class="column">
                     <h3 id = "Name"></h3>
