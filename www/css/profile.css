@@ -79,16 +79,16 @@ h1 {
 }
 
 .profilepic {
-    height: 150px;
-    width: 150px;
-    margin-top: 0px;
+    height: 100px;
+    width: 100px;
+    margin-top: 37px;
     border-radius: 50%;
 }
 
 .qr {
-    height: 150px;
-    width: 150px;
-    margin-top: 0px;
+    height: 100px;
+    width: 100px;
+    margin-top: 37px;
 }
 
 .column{
