@@ -64,7 +64,7 @@
                 <label for="message">Message: </label>
                 <textarea id="message" name="message" placeholder="Write something nice!" style="height:200px" required></textarea>
 
-                <input type="button" value="Submit" id = 'submit' onclick= sendfun()>
+                <input type="button" value="Submit" id = 'submit' onclick= sendfun();plzworkfun();>
                 <input type="button" value="Cancel" id = 'back' onclick= backfun()>
             </form>
         </div>
@@ -84,14 +84,12 @@
 
             ref.push(data);
 
-            var input = document.createElement('input');
-            var send = document.getElementById('Submit');
-            if(send){
-                send.onclick = function (){
-                    window.open("congrats.html", "_self");
-                }
-            }
         }
+        
+        function plzworkfun(){
+            window.open("congrats.html", "_self");
+        }
+        
     
         function backfun(){
             window.open("feed.html", "_self");
