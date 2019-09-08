@@ -49,11 +49,13 @@
 			var keys = Object.keys(userdata)
 			console.log(keys)
 			var Namevalue = userdata["name"];
+            var usernameValue = userdata["username"]
 			var locationValue= userdata["location"];
 			var bioValue= userdata["bio"];
 			//console.log(locationValue);
 			
 			Name.innerText = Namevalue;
+            Username.innerText = "@" + usernameValue;
 			bio.innerText = bioValue;
 			loc1.innerText = locationValue;
 			
@@ -64,29 +66,41 @@
         </div>
         <div class="container">
             <h1>Profile</h1>
-            <div class ="yourinfo">
-                <img src="img/avatar3.jpg" class="profilepic">
-                <h3 id = "Name"></h3>
-                <h3 id = "loc1"></h3>
-                <h3 id = "bio"></h3>
-				
+            <div class ="row">
+                <div class="column">
+                    <img src="img/avatar3.jpg" class="profilepic">
+                </div>
+                <div class="column">
+                    <h3 id = "Name"></h3>
+                    <h3 id = "Username"></h3>
+                    <h3 id = "loc1"></h3>
+                    <h3 id = "bio"></h3>
+                </div>
+                <div class="column">
+				    <img src="img/qrcode.png" class="qr">
+                </div>
             </div>
             <div class="score">
                 <h2> Your Score </h2>
-                <div class="scorecontent">
+                <div class="row2">
+                    <div class="column2a">
+                        <h4>0</h4>
+                    </div>
+                    <div class="column2b">
                     <img src="img/logo.png" class="sun">
-                    <h3> 100 </h3>
+                    </div>
                 </div>
             </div>
             <div class="personalfeed">
                 <h2> Recent Activity </h2>
+                <h4> None so far! Go generate some good vibes.</h4>
             </div>
         </div>
         <div class="navbar">
             <a href="googleMaps.html" class="nav">Map</a>
             <a href="feed.html" class="nav">Feed</a>
             <a href="profile.html" class="nav">Profile</a>
-            <a href="scan.html" class="nav">Scan</a>
+            <a href="search.html" class="nav">Search</a>
         </div>
 	</body>
 
